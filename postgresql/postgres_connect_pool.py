@@ -39,8 +39,8 @@ class PostgresPool(object):
         :param charset:字符编码
         """
 
-        if not self.__pool:
-            with self.__lock:
+        with self.__lock:
+            if not self.__pool:
                 self.__class__.__pool = PooledDB(psycopg2, mincached, maxcached,
                                                  maxshared, maxconnections, blocking,
                                                  maxusage, setsession, reset,
