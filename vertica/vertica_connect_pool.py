@@ -104,7 +104,7 @@ class VerticaPool(object):
 
 
 if __name__ == '__main__':
-    ver = VerticaPool(host='10.0.23.119', port=5433, user='dbadmin', password='oracle@123', database='scswsbf')
+    ver = VerticaPool(host='', port=5433, user='', password='', database='')
     res = ver.query_dict('select * from sq_xtyw.sjbd_config')
     res2 = ver.query_tuple('select * from sq_xtyw.sjbd_config')
     res3 = ver.execute("insert into sq_xtyw.sjbd_config values (1,'2','3','2','1223');")
