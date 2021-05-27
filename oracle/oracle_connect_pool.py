@@ -36,8 +36,8 @@ class OraclePool(object):
         :param charset:字符编码
         """
 
-        if not self.__pool:
-            with self.__lock:
+        with self.__lock:
+            if not self.__pool:
                 dsn = cx_Oracle.makedsn(host, port, db)
                 self.__class__.__pool = PooledDB(cx_Oracle, mincached, maxcached,
                                                  maxshared, maxconnections, blocking,
