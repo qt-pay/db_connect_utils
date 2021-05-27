@@ -87,7 +87,7 @@ class Oracle(object):
 
 
 if __name__ == '__main__':
-    oracle = Oracle(host='10.0.23.109', user='system', password='oracle123', db='haswj1dw')
+    oracle = Oracle(host='', user='', password='', db='')
     res = oracle.query_dict('select * from HX_SB.WAIT_DELETE')
     res2 = oracle.query_tuple('select * from HX_SB.WAIT_DELETE')
     oracle.execute("update HX_SB.WAIT_DELETE set  HOSTNAME='1' where TASKNAME='2'")
