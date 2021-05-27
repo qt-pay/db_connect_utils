@@ -7,7 +7,9 @@
     |   Mysql    |    Y     |      Y       |
     |   Postgresql    |    Y     |      Y       |
     |   Oracle    |    Y     |      Y       |
-    |   Verti    |    Y     |      Y       |
+    |   Vertica    |    Y     |      Y       |
+    |   Redis    |    Y     |      Y       |
+    |   MongoDB    |    Y     |      Y       |
     
     
     
