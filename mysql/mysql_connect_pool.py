@@ -39,9 +39,8 @@ class MysqlPool(object):
         :param passwd:密码
         :param charset:字符编码
         """
-
-        if not self.__pool:
-            with self.__lock:
+        with self.__lock:
+            if not self.__pool:
                 self.__class__.__pool = PooledDB(pymysql, mincached, maxcached,
                                                  maxshared, maxconnections, blocking,
                                                  maxusage, setsession, reset,
