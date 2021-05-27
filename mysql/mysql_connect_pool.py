@@ -104,7 +104,7 @@ class MysqlPool(object):
 
 
 if __name__ == '__main__':
-    mysql = MysqlPool(host='1.116.57.14', port=3306, user='root', passwd='123456', db='pylucene')
+    mysql = MysqlPool(host='', port=3306, user='', passwd='', db='')
     res1 = mysql.query_dict('select * from auth_user')
     res2 = mysql.query_tuple('select * from auth_user')
     mysql.execute('insert into auth_group value (2,1223)')
