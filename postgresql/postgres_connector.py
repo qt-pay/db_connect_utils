@@ -79,7 +79,7 @@ class Postgres(object):
 
 
 if __name__ == '__main__':
-    postgres = Postgres(host='10.0.23.100', port=5432, user='gpadmin', password='gpadmin', database='xcdw')
+    postgres = Postgres(host='', port=5432, user='', password='', database='')
     res = postgres.query_dict('select * from xcdw_dim.test')
     res2 = postgres.query_tuple('select * from xcdw_dim.test')
     postgres.execute('insert into xcdw_dim.test values (2,1223)')
