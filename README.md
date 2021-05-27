@@ -11,6 +11,8 @@
     |   Redis    |    Y     |      Y       |
     |   MongoDB    |    Y     |      Y       |
     
+    `Y 已实现,N未实现`
+    
     
     
 ## 注意事项
