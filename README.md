@@ -9,9 +9,10 @@
     |   Oracle    |    Y     |      Y       |
     |   Vertica    |    Y     |      Y       |
     |   Redis    |    Y     |      Y       |
-    |   MongoDB    |    Y     |      Y       |
+    |   MongoDB    |    Y     |      N       |
+    |   Hive    |    Y     |      Y       |
     
-    `Y 已实现,N未实现` 
+    `Y 已实现,N未实现` sasl-0.2.1-cp37-cp37m-win_amd64.whl
     
     
     
