@@ -107,5 +107,5 @@ if __name__ == '__main__':
     hive = HivePool(host='10.0.23.106', port=10000, user='root', password='123456', database='default')
     res1 = hive.query_dict('select * from test')
     res2 = hive.query_tuple('select * from test')
-    hive.execute("insert into test values ('tt2')")
+    hive.execute("insert into test values ('tt---------2')")
     hive.close()
