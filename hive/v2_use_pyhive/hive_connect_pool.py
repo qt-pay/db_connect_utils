@@ -93,5 +93,5 @@ class HivePool(object):
 if __name__ == '__main__':
     hive = HivePool(host='10.0.23.106', port=10000, username='root', password='123456', database='default')
     res2 = hive.query_tuple('select * from test')
-    hive.execute("insert into test values ('t1111t2')")
+    hive.execute("insert into test values ('22222222222')")
     hive.close()

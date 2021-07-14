@@ -6,7 +6,7 @@
 from impala import dbapi
 
 
-class Hive(object):
+class Impala(object):
     def __init__(self, host='127.0.0.1', port=21050, user="root", password='',
                  database='default', auth_mechanism='PLAIN'):
         self.host = host
@@ -81,8 +81,8 @@ class Hive(object):
 
 
 if __name__ == '__main__':
-    hive = Hive(host='10.0.23.106', port=21050, user='root', password='123456', database='default')
-    res1 = hive.query_dict('select * from test')
-    res2 = hive.query_tuple('select * from test')
-    hive.execute("insert into test values ('tt2')")
-    hive.close()
+    impala = Impala(host='10.0.23.106', port=21050, user='root', password='123456', database='default')
+    res1 = impala.query_dict('select * from test')
+    res2 = impala.query_tuple('select * from test')
+    impala.execute("insert into test values ('tt2')")
+    impala.close()

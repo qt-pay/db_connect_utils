@@ -13,7 +13,7 @@ from DBUtils.PersistentDB import PersistentDB  # 线程安全
 from DBUtils.PooledDB import PooledDB  # 线程不安全; python3 请使用: pip install DBUtils==1.3
 
 
-class HivePool(object):
+class Impala(object):
     __pool = None  # 类属性, 所有实例公用变量
     __lock = Lock()
 
@@ -104,8 +104,8 @@ class HivePool(object):
 
 
 if __name__ == '__main__':
-    hive = HivePool(host='10.0.23.106', port=21050, user='root', password='123456', database='default')
-    res1 = hive.query_dict('select * from test')
-    res2 = hive.query_tuple('select * from test')
-    hive.execute("insert into test values ('tt---------2')")
-    hive.close()
+    impala = Impala(host='10.0.23.106', port=21050, user='root', password='123456', database='default')
+    res1 = impala.query_dict('select * from test')
+    res2 = impala.query_tuple('select * from test')
+    impala.execute("insert into test values ('tt---------2')")
+    impala.close()
