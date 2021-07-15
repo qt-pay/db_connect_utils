@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # test module 个人习惯，测试目录去掉
-/test/
+/sichuan_pro/
 
 # Distribution / packaging
 .Python
@@ -119,3 +119,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# My dir
+sichuan_pro/
