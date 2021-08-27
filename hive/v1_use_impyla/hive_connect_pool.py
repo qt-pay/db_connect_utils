@@ -99,7 +99,7 @@ class HivePool(object):
         except Exception as e:
             print('发生异常:', e)
             # 发生错误时回滚
-            self._conn.rollback()
+            # self._conn.rollback()
         return execute_res
 
 
