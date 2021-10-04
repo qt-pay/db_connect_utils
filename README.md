@@ -6,6 +6,7 @@
     | :--------: | :------: | :----------: |
     |   Mysql    |    Y     |      Y       |
     |   Postgresql    |    Y     |      Y       |
+    |   GreenPlum    |    Y     |      Y       |
     |   Oracle    |    Y     |      Y       |
     |   Vertica    |    Y     |      Y       |
     |   Redis    |    Y     |      Y       |
