@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 # @time ：2021/5/26
 # @desc : description
-import psycopg2
+import psycopg2  # 建议使用 pip install psycopg2-binary
 from psycopg2 import extras  # 不能省略
 
 
 class Postgres(object):
-    def __init__(self, host='127.0.0.1', port=3306, user='root', password='', database='test'):
+    def __init__(self, host='127.0.0.1', port=5432, user='root', password='', database='test'):
         self.host = host
         self.port = int(port)
         self.user = user

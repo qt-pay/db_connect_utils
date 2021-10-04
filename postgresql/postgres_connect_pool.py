@@ -17,7 +17,7 @@ class PostgresPool(object):
 
     def __init__(self, mincached=10, maxcached=20, maxshared=10, maxconnections=200, blocking=True,
                  maxusage=100, setsession=None, reset=True,
-                 host='127.0.0.1', port=3306, database='test', user='root', password='', charset='utf8mb4'):
+                 host='127.0.0.1', port=5432, database='test', user='root', password='', charset='utf8mb4'):
         """
         dbapi ：数据库接口
         :param mincached:连接池中空闲连接的初始数量
