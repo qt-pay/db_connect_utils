@@ -10,6 +10,7 @@ Jinja2==3.0.1
 MarkupSafe==2.0.1
 paramiko==2.7.2
 prettytable==2.1.0
+psycopg2-binary==2.9.1
 pure-sasl==0.6.2
 pycparser==2.20
 PyHive==0.6.4
