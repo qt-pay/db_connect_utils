@@ -26,3 +26,5 @@ thrift==0.11.0
 thrift-sasl==0.4.3
 vertica-python==1.0.1
 wcwidth==0.2.5
+
+JayDeBeApi~=1.2.3

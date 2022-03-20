@@ -1,22 +1,23 @@
 # db_connect_utils
 - 基于Python3的各类数据库连接和连接池, 支持数据库有: Mysql(MariaDB), Oracle, PostgreSQL(GreenPlum), Vertica, Redis, MongoDB;
-- 数据库普通连接和连接池:
+ 数据库普通连接和连接池:
         
     | 数据库名称 | 普通连接 | 数据库连接池 |
     | :--------: | :------: | :----------: |
-    |   Mysql    |    Y     |      Y       |
-    |   Postgresql    |    Y     |      Y       |
-    |   GreenPlum    |    Y     |      Y       |
-    |   Oracle    |    Y     |      Y       |
-    |   Vertica    |    Y     |      Y       |
-    |   Redis    |    Y     |      Y       |
-    |   MongoDB    |    Y     |      N       |
-    |   Hive    |    Y     |      Y       |
-    |   Impala    |    Y     |      Y       |
-    
+    |   Mysql |    Y     |      Y       |
+    |   Postgresql |    Y     |      Y       |
+    |   GreenPlum |    Y     |      Y       |
+    |   Oracle |    Y     |      Y       |
+    |   Vertica |    Y     |      Y       |
+    |   Redis |    Y     |      Y       |
+    |   MongoDB |    Y     |      N       |
+    |   Hive |    Y     |      Y       |
+    |   Impala |    Y     |      Y       |
+    | Gauss      |    Y     |      Y       |
     `Y 已实现,N未实现` 
     
     
+- 支持jdbc 连接各种数据库
     
 ## 注意事项
 
