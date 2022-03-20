@@ -16,7 +16,7 @@ class Vertica(object):
                  password="",
                  options="",
                  driver="com.vertica.jdbc.Driver",
-                 jars=f"{Path(__file__).resolve().parent}/vertica-jdbc-8.1.1-5.jar",
+                 jars="vertica-jdbc-8.1.1-5.jar",
                  ):
         self.username = username
         self.password = password
@@ -30,7 +30,7 @@ class Vertica(object):
     def __connect(self):
         try:
             conn = jaydebeapi.connect(jclassname=self.driver, url=self.url,
-                                      driver_args=[self.username, self.password], jars=self.jars)
+                                      driver_args=[self.username, self.password], jars=f"{Path(__file__).resolve().parent}/"+self.jars)
         except Exception as e:
             print("vertica数据库连接异常:", e)
             conn = None

@@ -13,15 +13,16 @@ class Gauss(object):
                  port=25308,
                  db="",
                  username="root",
-                 password="", options="",
-                 driver="org.postgres.Driver",
-                 jars=f"{Path(__file__).resolve().parent}/gsjdbc4.jar",
+                 password="",
+                 options="",
+                 driver="org.postgresql.Driver",
+                 jars="gsjdbc4.jar",
                  ):
         self.username = username
         self.password = password
         self.driver = driver
         self.jars = jars
-        self.url = f"jdbc:postgres://{host}:{int(port)}/{db}?{options}"
+        self.url = f"jdbc:postgresql://{host}:{int(port)}/{db}?{options}"
         self.conn = self.__connect()
         if self.conn:
             self._cursor = self.conn.cursor()
@@ -29,7 +30,7 @@ class Gauss(object):
     def __connect(self):
         try:
             conn = jaydebeapi.connect(jclassname=self.driver, url=self.url,
-                                      driver_args=[self.username, self.password], jars=self.jars)
+                                      driver_args=[self.username, self.password], jars=f"{Path(__file__).resolve().parent}/"+self.jars)
         except Exception as e:
             print("gauss数据库连接异常:", e)
             conn = None

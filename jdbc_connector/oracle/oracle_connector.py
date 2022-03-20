@@ -16,7 +16,7 @@ class Oracle(object):
                  password="",
                  options="",
                  driver="oracle.jdbc.driver.OracleDriver",
-                 jars=f"{Path(__file__).resolve().parent}/ojdbc8.jar",
+                 jars="ojdbc8.jar",
                  ):
         self.username = username
         self.password = password
@@ -30,7 +30,7 @@ class Oracle(object):
     def __connect(self):
         try:
             conn = jaydebeapi.connect(jclassname=self.driver, url=self.url,
-                                      driver_args=[self.username, self.password], jars=self.jars)
+                                      driver_args=[self.username, self.password], jars=f"{Path(__file__).resolve().parent}/"+self.jars)
         except Exception as e:
             print("oracle数据库连接异常:", e)
             conn = None

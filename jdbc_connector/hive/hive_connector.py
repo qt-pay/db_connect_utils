@@ -8,15 +8,17 @@ import jaydebeapi
 
 
 class Hive(object):
-    def __init__(self,
-                 host="127.0.0.1",
-                 port=10000,
-                 db="",
-                 username="root",
-                 password="", options="",
-                 driver="org.apache.hive.jdbc.HiveDriver",
-                 jars=f"{Path(__file__).resolve().parent}/hive-jdbc-uber-2.6.5.0-292.jar",
-                 ):
+    def __init__(
+            self,
+            host="127.0.0.1",
+            port=10000,
+            db="",
+            username="root",
+            password="",
+            options="",
+            driver="org.apache.hive.jdbc.HiveDriver",
+            jars="hive-jdbc-uber-2.6.5.0-292.jar",
+    ):
         self.username = username
         self.password = password
         self.driver = driver
@@ -29,7 +31,8 @@ class Hive(object):
     def __connect(self):
         try:
             conn = jaydebeapi.connect(jclassname=self.driver, url=self.url,
-                                      driver_args=[self.username, self.password], jars=self.jars)
+                                      driver_args=[self.username, self.password],
+                                      jars=f"{Path(__file__).resolve().parent}/" + self.jars)
         except Exception as e:
             print("hive数据库连接异常:", e)
             conn = None

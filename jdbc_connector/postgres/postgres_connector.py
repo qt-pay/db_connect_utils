@@ -16,7 +16,7 @@ class Postgres(object):
                  password="",
                  options="",
                  driver="org.postgresql.Driver",
-                 jars=f"{Path(__file__).resolve().parent}/postgresql-42.2.5.jar",
+                 jars="postgresql-42.2.5.jar",
                  ):
         self.username = username
         self.password = password
@@ -30,7 +30,7 @@ class Postgres(object):
     def __connect(self):
         try:
             conn = jaydebeapi.connect(jclassname=self.driver, url=self.url,
-                                      driver_args=[self.username, self.password], jars=self.jars)
+                                      driver_args=[self.username, self.password], jars=f"{Path(__file__).resolve().parent}/"+self.jars)
         except Exception as e:
             print("postgres数据库连接异常:", e)
             conn = None

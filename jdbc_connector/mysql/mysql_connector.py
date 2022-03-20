@@ -17,7 +17,7 @@ class Mysql(object):
                  password="",
                  options="",
                  driver="com.mysql.cj.jdbc.Driver",
-                 jars=f"{Path(__file__).resolve().parent}/mysql-connector-java-8.0.17.jar", ):
+                 jars="mysql-connector-java-8.0.17.jar", ):
         self.username = username
         self.password = password
         self.driver = driver
@@ -30,7 +30,7 @@ class Mysql(object):
     def __connect(self):
         try:
             conn = jaydebeapi.connect(jclassname=self.driver, url=self.url,
-                                      driver_args=[self.username, self.password], jars=self.jars)
+                                      driver_args=[self.username, self.password], jars=f"{Path(__file__).resolve().parent}/"+self.jars)
         except Exception as e:
             print("mysql数据库连接异常:", e)
             conn = None
@@ -76,13 +76,13 @@ if __name__ == "__main__":
     mysql = Mysql(
         host="10.0.23.106",
         port=3306,
-        db="datax_test",
+        # db="datax_test",
         username="root",
         password="123456",
 
     )
-    res = mysql.query("select * from datax_test.test")
+    res = mysql.query("select * from test")
     print(res)
-    ok = mysql.execute("insert into datax_test.test values(1,'jerry')")
+    ok = mysql.execute("insert into test values(1,'jerry')")
     print(ok)
     mysql.close()

@@ -2,12 +2,13 @@
 # -*- coding: utf-8 -*-
 # date: 2022/3/20
 # desc: ...
-from database.gauss.gauss_connector import Gauss
-from database.vertica.vertica_connector import Vertica
-from database.oracle.oracle_connector import Oracle
-from database.postgres.postgres_connector import Postgres
-from database.mysql.mysql_connector import Mysql
-from database.hive.hive_connector import Hive
+import settings
+from jdbc_connector.gauss.gauss_connector import Gauss
+from jdbc_connector.vertica.vertica_connector import Vertica
+from jdbc_connector.oracle.oracle_connector import Oracle
+from jdbc_connector.postgres.postgres_connector import Postgres
+from jdbc_connector.mysql.mysql_connector import Mysql
+from jdbc_connector.hive.hive_connector import Hive
 
 
 def get_db_connector(db_type, host, port, db, username, password, options=""):
@@ -20,8 +21,11 @@ def get_db_connector(db_type, host, port, db, username, password, options=""):
         "vertica": Vertica,
         "oracle": Oracle,
         "postgres": Postgres,
+        "tdpg": Postgres,
         "mysql": Mysql,
+        "tdmysql": Mysql,
         "hive": Hive,
+        "odps": Hive,
     }
     db_connector = db_map[db_type](
         host=host,
@@ -30,6 +34,8 @@ def get_db_connector(db_type, host, port, db, username, password, options=""):
         username=username,
         password=password,
         options=options,
+        driver=settings.DATABASE_INFO[db_type]["drive"],
+        jars=settings.DATABASE_INFO[db_type]["jars"],
     )
 
     return db_connector
