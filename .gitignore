@@ -122,3 +122,4 @@ dmypy.json
 
 # My dir
 sichuan_pro/
+*test.py

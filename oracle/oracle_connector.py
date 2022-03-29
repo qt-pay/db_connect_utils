@@ -19,7 +19,8 @@ class Oracle(object):
 
     def __connect(self):
         try:
-            conn = cx_Oracle.connect('{}/{}@{}:{}/{}'.format(self.user, self.password, self.host, self.port, self.db))
+            conn = cx_Oracle.connect(user=self.user, password=self.password, dsn=f"{self.host}:{self.port}/{self.db}",
+                                     encoding=self.charset)
         except Exception as e:
             print("连接异常:", e)
             conn = None

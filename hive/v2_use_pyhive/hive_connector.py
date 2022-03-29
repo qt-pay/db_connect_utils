@@ -64,12 +64,13 @@ class Hive(object):
         except Exception as e:
             print('发生异常:', e)
             # 发生错误时回滚
-            self._conn.rollback()
+            # self._conn.rollback()
         return execute_res
 
 
 if __name__ == '__main__':
     hive = Hive(host='10.0.23.106', port=10000, username='root', password='123456', database='default')
     res1 = hive.query_tuple('select * from test')
-    hive.execute("insert into test values ('tt2')")
+    print(res1)
+    hive.execute("insert into test values ('tt2','23')")
     hive.close()
