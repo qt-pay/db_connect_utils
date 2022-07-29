@@ -76,7 +76,7 @@ class Hive(object):
 
 if __name__ == "__main__":
     hive = Hive(
-        host="10.0.23.106",
+        host="127.0.0.106",
         port=10000,
         db="default",
         username="root",

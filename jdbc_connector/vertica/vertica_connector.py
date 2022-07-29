@@ -74,7 +74,7 @@ class Vertica(object):
 
 if __name__ == "__main__":
     vertica = Vertica(
-        host="10.0.23.119",
+        host="127.0.0.119",
         port=5433,
         db="scswsbf",
         username="dbadmin",

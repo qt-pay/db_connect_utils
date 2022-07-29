@@ -74,7 +74,7 @@ class Postgres(object):
 
 if __name__ == "__main__":
     postgres = Postgres(
-        host="10.0.23.109",
+        host="127.0.0.109",
         port=5432,
         db="postgres",
         username="postgres",

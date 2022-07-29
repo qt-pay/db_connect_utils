@@ -74,7 +74,7 @@ class Oracle(object):
 
 if __name__ == "__main__":
     oracle = Oracle(
-        host="10.0.23.109",
+        host="127.0.0.109",
         port=1521,
         db="haswj1dw",
         username="system",

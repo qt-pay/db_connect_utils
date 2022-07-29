@@ -81,7 +81,7 @@ class Impala(object):
 
 
 if __name__ == '__main__':
-    impala = Impala(host='10.0.23.106', port=21050, user='root', password='123456', database='default')
+    impala = Impala(host='127.0.0.106', port=21050, user='root', password='123456', database='default')
     res1 = impala.query_dict('select * from test')
     res2 = impala.query_tuple('select * from test')
     impala.execute("insert into test values ('tt2')")

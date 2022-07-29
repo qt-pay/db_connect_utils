@@ -44,7 +44,7 @@ def get_db_connector(db_type, host, port, db, username, password, options=""):
 if __name__ == '__main__':
     mysql = get_db_connector(
         db_type="mysql",
-        host="10.0.23.106",
+        host="127.0.0.106",
         port=3306,
         db="datax_test",
         username="root",

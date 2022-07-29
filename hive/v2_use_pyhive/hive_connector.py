@@ -69,7 +69,7 @@ class Hive(object):
 
 
 if __name__ == '__main__':
-    hive = Hive(host='10.0.23.106', port=10000, username='root', password='123456', database='default')
+    hive = Hive(host='127.0.0.106', port=10000, username='root', password='123456', database='default')
     res1 = hive.query_tuple('select * from test')
     print(res1)
     hive.execute("insert into test values ('tt2','23')")
